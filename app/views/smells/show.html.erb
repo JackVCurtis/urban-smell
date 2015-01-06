@@ -1,0 +1,19 @@
+<%= link_to 'Back', smells_path %><br>
+
+<hr>
+
+<h2><%= @smell.title %></h2>
+
+<%= image_tag( @smell.image_url) %>
+
+<h3>Downvotes: <%= @smell.downvotes.count %></h3>
+
+<%= form_for([@smell, @smell.downvotes.build]) do |f| %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Remove Downvote', [@smell, @last_downvote], method: :delete %>
+<hr>
+
+<%= link_to 'View on map', @smell.location_url %><br>
+<%= link_to 'Edit Smell', edit_smell_path( @smell ) %><br>

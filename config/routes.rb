@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :smells
+  resources :smells do
+    resources :downvotes, except: :update
+  end
+
   root "smells#index"
 end

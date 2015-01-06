@@ -1,1 +1,6 @@
-hello world
+<ul>
+  <li><%= link_to 'New Smell', new_smell_path %></li>
+  <% @smells.each do |smell| %>
+    <li><%= link_to smell.title, smell %></li>
+  <% end %>
+</ul>

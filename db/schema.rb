@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104180349) do
+ActiveRecord::Schema.define(version: 20150106212409) do
+
+  create_table "downvotes", force: true do |t|
+    t.integer "smell_id"
+  end
+
+  add_index "downvotes", ["smell_id"], name: "index_downvotes_on_smell_id"
 
   create_table "smells", force: true do |t|
     t.string   "title"
